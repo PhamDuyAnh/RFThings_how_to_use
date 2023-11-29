@@ -21,6 +21,13 @@ _**Other**_
 -   [https://github.com/stevemarple/MicroNMEA](https://github.com/stevemarple/MicroNMEA)
 -   [https://github.com/automote/LTR303](https://github.com/automote/LTR303)
 
+### About the board
+![Top](https://github.com/PhamDuyAnh/RFThings_how_to_use/blob/main/REF/top.jpg)
+
+![Bot](https://github.com/PhamDuyAnh/RFThings_how_to_use/blob/main/REF/bot.jpg)
+
+[USB port](https://github.com/PhamDuyAnh/RFThings_how_to_use/blob/main/REF/usb.jpg)
+
 ### Installing the Arduino IDE & ESP32 Board
 
 1.  Download and install the Arduino IDE (at least version v1.6.8)
