@@ -26,7 +26,7 @@ _**Other**_
 
 ![Bot](https://github.com/PhamDuyAnh/RFThings_how_to_use/blob/main/REF/bot.jpg)
 
-[USB port](https://github.com/PhamDuyAnh/RFThings_how_to_use/blob/main/REF/usb.jpg)
+![USB port](https://github.com/PhamDuyAnh/RFThings_how_to_use/blob/main/REF/usb.jpg)
 
 ### Installing the Arduino IDE & ESP32 Board
 
