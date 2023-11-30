@@ -18,7 +18,9 @@ const char* mqtt_server = "mqtt server";      // replace with your MQTT URL
 const char* mqtt_username = "mqtt username";  // replace with your Username
 const char* mqtt_password = "mqtt password";  // replace with your Password
 ```
-
+*  The **LEDStatus**, **PubSubClient** library is already available in the **src** folder
+*  Other libraries are available when installing **Arduino IDE** and **ESP32 by Espressif Systems**
+  
 **Okay**, now you can select Upload, then press RESET (ESP_EN1) and wait for the results.
 Remember to open the Serial Monitor window to read the results returned by RF210 
 
