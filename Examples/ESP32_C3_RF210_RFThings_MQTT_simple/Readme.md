@@ -24,6 +24,12 @@ const char* mqtt_password = "mqtt password";  // replace with your Password
 **Okay**, now you can select Upload, then press RESET (ESP_EN1) and wait for the results.
 Remember to open the Serial Monitor window to read the results returned by RF210 
 
+Use **MQTT Explorer** or another program (app) to view, pub/sub topic on MQTT Server
+
+*  The **will** topis: is a topic that reports the device's online status. When the device connect timeout (keep align), will topic will be changed value by MQTT server.
+*  The **tem, hum,.. alt, lon...** topics: are topics that store data of sensors and gnss
+*  Master topic is **RFThings-XXXXXXXXXXXX**, [XXXXXXXXXXXX] is the FuseMAC of the ESP32 chip
+
 ### Note
 *  **RAK3172 AT command** --> [..github.com/PhamDuyAnh/RFThings_how_to_use...](https://github.com/PhamDuyAnh/RFThings_how_to_use/tree/main#readme)
 *  **MQTT Explorer** --> You can use the **MQTT Explorer** app to quickly view topics on the MQTT server. [mqtt-explorer.com](https://mqtt-explorer.com/)
