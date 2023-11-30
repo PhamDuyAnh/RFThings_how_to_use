@@ -30,6 +30,8 @@ Use **MQTT Explorer** or another program (app) to view, pub/sub topic on MQTT Se
 *  The **tem, hum,.. alt, lon...** topics: are topics that store data of sensors and gnss
 *  Master topic is **RFThings-XXXXXXXXXXXX**, [XXXXXXXXXXXX] is the FuseMAC of the ESP32 chip
 
+![MQTT Explorer](https://github.com/PhamDuyAnh/RFThings_how_to_use/blob/main/REF/MQTT-Explorer.png)
+
 ### Note
 *  **RAK3172 AT command** --> [..github.com/PhamDuyAnh/RFThings_how_to_use...](https://github.com/PhamDuyAnh/RFThings_how_to_use/tree/main#readme)
 *  **MQTT Explorer** --> You can use the **MQTT Explorer** app to quickly view topics on the MQTT server. [mqtt-explorer.com](https://mqtt-explorer.com/)
