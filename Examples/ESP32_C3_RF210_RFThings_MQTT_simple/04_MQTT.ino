@@ -25,6 +25,7 @@ PubSubClient mqtt;
 
 
 #define mqtt_tcpssl 0                         // 0 is don't use TCP SSL, default port 1883
+const int mqtt_port = 1883;                   // default port 1883
 const char* mqtt_server = "mqtt server";      // replace with your MQTT URL
 const char* mqtt_username = "mqtt username";  // replace with your Username
 const char* mqtt_password = "mqtt password";  // replace with your Password
