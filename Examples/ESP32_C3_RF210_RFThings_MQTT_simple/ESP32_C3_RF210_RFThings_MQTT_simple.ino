@@ -243,8 +243,8 @@ void initSerial() {
   Serial.begin(BAUDRATE);
 
   unsigned int _t;
-  while (!Serial && (_t < 200)) {  // timeout to wait Serial is 2s
-    delay(100);
+  while (!Serial && (_t < 1000)) {  // timeout to wait Serial is 2s
+    delay(1);
     _t++;
   }
 
