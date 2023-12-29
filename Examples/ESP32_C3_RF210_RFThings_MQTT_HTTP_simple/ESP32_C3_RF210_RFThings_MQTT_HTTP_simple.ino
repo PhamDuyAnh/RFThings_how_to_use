@@ -110,9 +110,9 @@ void setup() {
   onRAK3172();
 
   ledstatus.ledFlasher(2);
-  
+
   initSerial();
-  
+
 
   ledstatus.ledFlasher(5);
 
@@ -173,7 +173,10 @@ void loop() {
   if (isWifiConnected()) {
     if (!mqtt_connected) ledstatus.ledFlasher(1);
     else ledstatus.ledFlasher(2);
-  } else ledstatus.ledFlasher(5);
+  } else {
+    ledstatus.ledFlasher(5);
+    initMultiFifi();
+  }
   if (!isOTA) {
     // get RAK data & pub MQTT
     if (millis() - t_mqtt > intervalMQTT) {
@@ -188,6 +191,9 @@ void loop() {
       String str = rakReadStringUntil();
       str.trim();
       str.replace("\r\n", "=");
+      str.replace(" degree C", "");
+      str.replace("%", "");
+
       byte _l = str.length();
       byte _i = str.indexOf("OK");
       //dbPrintln("---: " + str);
@@ -196,6 +202,13 @@ void loop() {
 
         _i = str.lastIndexOf("=");
         val[i] = str.substring(_i + 1);
+
+        // if (cmd[i] = "ATC+GPSSAT" && val[i] == "0") {
+        //   val[i + 1] = "0";
+        //   val[i + 2] = "0";
+        //   val[i + 3] = "0";
+        //   i += 3;
+        // }
 
         if (cmd[i] == "ATC+GPSTIME") {  // re calculate to Local time (GMT+7)
           unixTime = val[i].toInt();
@@ -228,17 +241,19 @@ void loop() {
     if (millis() - t_http > intervalHTTP) {
       t_http += intervalHTTP;
 
+      // Serial.println("HTTP GET.....................");
       if (isWifiConnected()) {
         //Your Domain name with URL path or IP address with path
         String serverPath = "http://iot.mkgreen.org/rf210/rf210.php?devid=" + clientId;
-
+        // String serverPath = "http://mkgreen.org/iot/rf210/rf210.php?devid=" + clientId;
         for (byte i = 0; i < sizeof(cmd) / sizeof(String); i++) {
           serverPath += "&";
-          if (i == 9) serverPath += topic[i] + "=" + String(unixTime);
+
+          if (val[i] == "999.0000") val[i] = "0";
+          if (i == 9) serverPath += topic[i] + "=" + String(unixTime);  // unixTime rawtime
           else serverPath += topic[i] + "=" + val[i];
         }
-
-        //dbPrintln(serverPath);
+        // dbPrintln(serverPath);
         httpGET(serverPath);
       }
     }
