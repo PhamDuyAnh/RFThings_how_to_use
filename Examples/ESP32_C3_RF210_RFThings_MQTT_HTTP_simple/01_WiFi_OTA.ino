@@ -78,7 +78,7 @@ void initMultiFifi() {
     }
     WiFi.scanDelete();
     WiFi.disconnect();
-
+    delay(200);
     if (known) {
 #ifdef NODE
       // CKD add static IP
